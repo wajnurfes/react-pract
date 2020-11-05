@@ -5,11 +5,17 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-    this.toggleState = false;
+    this.state = {
+      toggled: false,
+      sum: 0
+  }
   }
 
   toggle = () => {
-    this.toggleState = !this.toggleState
+    this.setState({
+      toggled: !this.state.toggled
+    });
+  }
   }
 
 
