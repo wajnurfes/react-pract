@@ -26,12 +26,16 @@ class App extends Component {
 
   render() { 
     return(
-      <div className="App"> 
+      <div className="App">
+        <div className="ButtonContainer">
           {(() => {
             if (this.state.toggled) return <button onClick={this.toggle}>Don't click on me.</button>
             else return <button onClick={this.toggle}>Click on me!</button>
           })()}
+        </div>
+        <div className="ButtonContainer">
           <button onClick={this.add}>{this.state.sum}</button>
+          </div>
       </div>
     );
   };
