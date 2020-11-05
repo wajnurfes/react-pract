@@ -20,9 +20,14 @@ class App extends Component {
 
 
   render() { 
-    return(<div className="App"> 
-    <p onClick={this.toggle}>Cick on me!</p>
-    </div>);
+    return(
+      <div className="App"> 
+          {(() => {
+            if (this.state.toggled) return <button onClick={this.toggle}>Don't click on me.</button>
+            else return <button onClick={this.toggle}>Click on me!</button>
+          })()}
+      </div>
+    );
   };
 }
 
