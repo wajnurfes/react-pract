@@ -8,7 +8,7 @@ class App extends Component {
     this.state = {
       toggled: false,
       sum: 0
-  }
+    }
   }
 
   toggle = () => {
@@ -16,6 +16,11 @@ class App extends Component {
       toggled: !this.state.toggled
     });
   }
+
+  add = () => {
+    this.setState({
+      sum: this.state.sum + 1
+    });
   }
 
 
@@ -26,6 +31,7 @@ class App extends Component {
             if (this.state.toggled) return <button onClick={this.toggle}>Don't click on me.</button>
             else return <button onClick={this.toggle}>Click on me!</button>
           })()}
+          <button onClick={this.add}>{this.state.sum}</button>
       </div>
     );
   };
